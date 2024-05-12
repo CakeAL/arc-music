@@ -1,52 +1,55 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Greet from "./components/Greet.vue";
+// 单页面路由
+import { ref, computed } from "vue";
+import Home from "./pages/Home.vue";
+import About from "./pages/About.vue";
+import NotFound from "./pages/NotFound.vue";
+import FolderMgmt from "./pages/FolderMgmt.vue";
+import MusicILike from "./pages/MusicILike.vue";
+import MyCollection from "./pages/MyCollection.vue";
+import RecentlyPlayed from "./pages/RecentlyPlayed.vue";
+
+const routes = {
+  "/": Home,
+  "/about": About,
+  "/folder-mgmt": FolderMgmt,
+  "/music-i-like": MusicILike,
+  "/my-collection": MyCollection,
+  "/recently-played": RecentlyPlayed,
+};
+const currentPath = ref(window.location.hash);
+window.addEventListener("hashchange", () => {
+  currentPath.value = window.location.hash;
+});
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || "/"] || NotFound;
+});
+
+// import 组件
+import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <div class="container">
-    <h1>Welcome to Tauri!</h1>
-
-    <div class="row">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo vite" alt="Vite logo" />
-      </a>
-      <a href="https://tauri.app" target="_blank">
-        <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
-    </div>
-
-    <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
-
-    <p>
-      Recommended IDE setup:
-      <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-      +
-      <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-      +
-      <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank"
-        >Tauri</a
+  <n-layout style="height: 100vh">
+    <n-layout-header style="height: 50px" bordered data-tauri-drag-region>
+      Title
+    </n-layout-header>
+    <n-layout position="absolute" style="top: 50px; bottom: 50px" has-sider>
+      <n-layout-sider
+        content-style="padding: 0px;"
+        :native-scrollbar="false"
+        bordered
       >
-      +
-      <a href="https://github.com/rust-lang/rust-analyzer" target="_blank"
-        >rust-analyzer</a
-      >
-    </p>
-
-    <Greet />
-  </div>
+        <Menu />
+      </n-layout-sider>
+      <n-layout content-style="padding: 24px;" :native-scrollbar="false">
+        <component :is="currentView" />
+      </n-layout>
+    </n-layout>
+    <n-layout-footer position="absolute" style="height: 50px" bordered>
+      footer
+    </n-layout-footer>
+  </n-layout>
 </template>
 
-<style scoped>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #249b73);
-}
-</style>
+<style scoped></style>

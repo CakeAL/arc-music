@@ -1,8 +1,8 @@
 [package]
 name = "arc-music"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "0.1.0"
+description = "A Music Player created by Tauri"
+authors = ["CakeAL"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -11,9 +11,25 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = ["shell-open"] }
+tauri = { version = "1", features = [
+    "window-hide",
+    "window-unminimize",
+    "window-unmaximize",
+    "window-start-dragging",
+    "window-show",
+    "window-maximize",
+    "window-close",
+    "window-minimize",
+    "shell-open",
+    "path-all",
+] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+anyhow = "1.0.81"
+id3 = "1.13.1"
+mp3-duration = "0.1.10"
+chrono = "0.4.37"
+rfd = "0.14.1"
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!

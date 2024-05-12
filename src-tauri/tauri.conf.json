@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "arc-music",
-    "version": "0.0.0"
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -15,13 +15,30 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
+      },
+      "path": {
+        "all": true
       }
     },
     "windows": [
       {
-        "title": "arc-music",
-        "width": 800,
-        "height": 600
+        "title": "",
+        "width": 1000,
+        "height": 670,
+        "minWidth": 1000,
+        "minHeight": 670,
+        "titleBarStyle": "Overlay"
       }
     ],
     "security": {
