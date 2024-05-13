@@ -9,4 +9,5 @@ pub struct Music {
     pub album: Option<String>,
     pub duration: u32, // 持续的秒数,
     pub file_path: PathBuf,
+    pub picture_base64: String,
 }

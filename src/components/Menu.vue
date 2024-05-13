@@ -4,14 +4,15 @@
 
 <script>
 import { defineComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 
 const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/",
+          to: { path: "/" },
         },
         { default: () => "主页" }
       ),
@@ -20,9 +21,9 @@ const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/about",
+          to: { path: "/about" },
         },
         { default: () => "关于" }
       ),
@@ -31,9 +32,9 @@ const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/folder-mgmt",
+          to: { path: "/folder-mgmt" },
         },
         { default: () => "文件夹管理" }
       ),
@@ -42,9 +43,9 @@ const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/music-i-like",
+          to: { path: "/music-i-like" },
         },
         { default: () => "我喜欢的音乐" }
       ),
@@ -53,9 +54,9 @@ const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/my-collection",
+          to: { path: "/my-collection" },
         },
         { default: () => "我的集合" }
       ),
@@ -64,9 +65,11 @@ const menuOptions = [
   {
     label: () =>
       h(
-        "a",
+        RouterLink,
         {
-          href: "#/recently-played",
+          to: {
+            path: "/recently-played",
+          },
         },
         { default: () => "最近播放" }
       ),
