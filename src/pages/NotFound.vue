@@ -8,6 +8,7 @@
         >Logo from @SAWARATSUKI</a
       >
     </p>
+    <p>正常来说你不应该访问到这页的</p>
   </div>
 </template>
 

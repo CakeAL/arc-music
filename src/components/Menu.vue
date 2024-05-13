@@ -1,5 +1,5 @@
 <template>
-  <n-menu :options="menuOptions" />
+  <n-menu :options="menuOptions" class="n-menu"/>
 </template>
 
 <script>
@@ -85,3 +85,6 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+</style>

@@ -10,6 +10,7 @@ import FolderMgmt from "./pages/FolderMgmt.vue";
 import MusicILike from "./pages/MusicILike.vue";
 import MyCollection from "./pages/MyCollection.vue";
 import RecentlyPlayed from "./pages/RecentlyPlayed.vue";
+import ListOfMusic from "./pages/ListOfMusic.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -18,6 +19,7 @@ const routes = [
   { path: "/music-i-like", component: MusicILike },
   { path: "/my-collection", component: MyCollection },
   { path: "/recently-played", component: RecentlyPlayed },
+  { path: "/list-of-music/:list_title", component: ListOfMusic},
   { path: "/:catchAll(.*)", component: NotFound },
 ];
 
