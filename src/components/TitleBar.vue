@@ -20,7 +20,7 @@ function goforward() {
 
 <style scoped>
 .n-button-group {
-  margin-left: 175px;
+  margin-left: 125px;
   position: absolute;
   bottom: 5px;
 }
