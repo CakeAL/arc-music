@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from "vue"
+import { invoke } from "@tauri-apps/api/tauri";
+// props
 const props = defineProps([
   "title",
   "artist",
@@ -7,11 +10,18 @@ const props = defineProps([
   "picture_base64",
   "album",
 ]);
-
+// play a music
+async function playMusic() {
+    const event = {
+        action: "play",
+        file_path: props.file_path,
+    }
+    await invoke("handle_music_event", { event: JSON.stringify(event) }).catch((error) => console.log(error));
+}
 </script>
 
 <template>
-  <div class="music-box">
+  <div class="music-box" @click="playMusic">
     <n-image width="60" :src="props.picture_base64" class="music-box-image" />
     <div>
       <p class="music-box-p">{{ props.title }}</p>

@@ -37,6 +37,7 @@ pub fn get_list_of_music_json(title: String) -> Result<String, String> {
 #[tauri::command]
 pub fn handle_music_event(sender: tauri::State<Sender<MusicEvent>>, event: String) {
     let event: serde_json::Value = serde_json::from_str(&event).unwrap();
+    // println!("{:?}", event);
     if let Some(action) = event["action"].as_str() {
         match action {
             "play" => event["file_path"]

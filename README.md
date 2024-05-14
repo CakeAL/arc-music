@@ -1,7 +1,20 @@
-# Tauri + Vue 3
+# Arc Music 一个播放器
+## 简介
+一个Vue + Vite + Tauri的音乐播放器。 \
+目前功能都没完成， 
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 功能
 
-## Recommended IDE Setup
+1. 可以播放音乐，添加文件夹，然后在列表选一个就行了。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## 构建和运行
+大概是macOS，Windows和Linux都能运行的。 
+```bash
+# 安装 tauri
+cargo install create-tauri-app --locked
+# 运行
+cargo tauri dev
+# 或者
+pnpm i
+pnpm tauri dev
+```
