@@ -4,7 +4,7 @@ use anyhow::Result;
 
 use crate::utils;
 
-pub fn get_list_of_music_json_content(title: &str) -> Result<String> {
+pub fn get_list_of_music_json_content(title: &String) -> Result<String> {
     let mut list_of_music_json_path = utils::get_lists_path()?;
     list_of_music_json_path.push(title);
     // println!("{:?}", list_of_music_json_path);
