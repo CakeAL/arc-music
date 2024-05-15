@@ -62,3 +62,9 @@ impl MusicService {
         }
     }
 }
+
+impl Default for MusicService {
+    fn default() -> Self {
+        Self::new()
+    }
+}

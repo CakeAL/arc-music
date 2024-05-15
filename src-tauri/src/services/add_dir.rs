@@ -36,7 +36,7 @@ pub fn add_dir(dir_path: PathBuf) -> Result<()> {
                             None => picture_base64 = "".to_string(),
                         }
                         if flag {
-                            list_pic_base64 = picture_base64.clone();
+                            list_pic_base64.clone_from(&picture_base64);
                             flag = false;
                         }
                         musics_in_dir.push(Music {
@@ -45,7 +45,7 @@ pub fn add_dir(dir_path: PathBuf) -> Result<()> {
                             album: tag.album().map(String::from),
                             duration: duration.as_secs() as u32,
                             file_path: file_path.path(),
-                            picture_base64: picture_base64,
+                            picture_base64,
                         })
                     }
                 } else {
@@ -68,7 +68,7 @@ pub fn add_dir(dir_path: PathBuf) -> Result<()> {
     let musics_json_path = lists_path;
     // println!("{:?}", musics_json_path);
     // 写入json
-    let mut musics_json_file = File::create(&musics_json_path)?;
+    let mut musics_json_file = File::create(musics_json_path)?;
     musics_json_file.write_all(&serde_json::to_vec(&musics_in_dir)?)?;
     // 更新list json
     let list_json_path = utils::get_list_json_path()?;

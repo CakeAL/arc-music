@@ -14,7 +14,7 @@ pub fn add_list_from_dir() -> Result<(), String> {
             Ok(_) => Ok(()),
         }
     } else {
-        return Err("Empty dir_path!".to_string());
+        Err("Empty dir_path!".to_string())
     }
 }
 
