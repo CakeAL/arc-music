@@ -25,7 +25,7 @@ async function get_list_of_music_json() {
   <!-- <h1>{{ $route.params.list_title }}</h1>
   {{ musics_info }} -->
   <div class="list-of-music">
-    <!-- <ShowMusicInfo /> -->
+    <ShowMusicInfo />
     <n-flex
       vertical
       class="n-flex"
