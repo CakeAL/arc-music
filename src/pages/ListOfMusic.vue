@@ -32,7 +32,11 @@ async function get_list_of_music_json() {
       :native-scrollbar="false"
       id="music-box-list"
     >
-      <div v-for="(music, index) in musics_info" :key="index">
+      <div
+        v-for="(music, index) in musics_info"
+        :key="index"
+        class="music-box-list-div"
+      >
         <MusicBox
           :title="music.title"
           :artist="music.artist"
@@ -62,5 +66,10 @@ async function get_list_of_music_json() {
   position: absolute;
   right: 0px;
   height: calc(100vh - 100px);
+  /* width: 350px; */
+}
+
+.music-box-list-div {
+  transition: left 0.3s ease-out;
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup>
 import Menu from "./components/Menu.vue";
 import TitleBar from "./components/TitleBar.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
@@ -33,7 +34,7 @@ import TitleBar from "./components/TitleBar.vue";
         </n-split>
     </n-layout>
     <n-layout-footer position="absolute" style="height: 50px" bordered>
-      footer
+      <Footer />
     </n-layout-footer>
   </n-layout>
 </template>

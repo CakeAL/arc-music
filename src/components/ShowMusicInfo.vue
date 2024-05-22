@@ -28,7 +28,7 @@ const now_playing = useNowPlayingStore();
 .show-img {
   margin-left: 20px;
   /* transform: rotate(-5deg); */
-  animation: wobble 5s infinite;
+  animation: wobble 6s ease-in-out infinite;
 }
 
 @keyframes wobble {
